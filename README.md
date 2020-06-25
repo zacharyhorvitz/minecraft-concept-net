@@ -11,3 +11,9 @@ Relational information extracted from Minecraft wiki-sources, A Minecraft Concep
 "type": "Tools"}</code></pre>
 
 Where each ingredient element corresponds to a crafting slot.
+
+
+#TODO:
+- Include crafting info for all animated Inv-Slots
+- Include hierarchy for different types of pickaxe?
+- Include Edges going from tools to materials they can be used for (from each block page)
