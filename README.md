@@ -1,5 +1,5 @@
 # minecraft-concept-net
-Relational information extracted from Minecraft wiki-sources, A Minecraft Conceptnet for planning and reinforcement learning.
+Relational information extracted from Minecraft wiki-sources, A Minecraft [ConceptNet](https://conceptnet.io/) for planning and reinforcement learning.
 
 
 **crafting_data** is a json of the form:
