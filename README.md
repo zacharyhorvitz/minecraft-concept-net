@@ -1,5 +1,5 @@
 # minecraft-concept-net
-Relational information extracted from Minecraft wiki-sources, A Minecraft Conceptnet
+Relational information extracted from Minecraft wiki-sources, A Minecraft Conceptnet for planning and reinforcement learning.
 
 
 **crafting_data** is a json of the form:
@@ -12,9 +12,17 @@ Relational information extracted from Minecraft wiki-sources, A Minecraft Concep
 
 Where each ingredient element corresponds to a crafting slot.
 
+** retrieve_dependencies.py ** can be used to retrieve all the dependencies (drops/crafting/smelting data) for a given set of inputs. It does this my crawling the Minecraft wikipedia, extracting information from crafting/smelting panes, and also searching for textual information about material drops.
+
+<code>python retrieve_dependencies.py diamond </code>
+
+The above command saves recipes info into a json. For certain items with many dependencies, it will take a few minutes.
+
+![diamond](diamond_dependencies.jpg)
+
+*Note that diamond ore is also related to diamond via "Drop," but the edge is obscured by the the smelt relation.
+
 
 #TODO:
-- Include crafting info for all animated Inv-Slots
-- Include hierarchy for different types of pickaxe?
-- Include Edges going from tools to materials they can be used for (from each block page)
-- Go from objects to drops
+- Clean code
+- Optimize
