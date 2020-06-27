@@ -18,7 +18,7 @@ Where each ingredient element corresponds to a crafting slot.
 
 The above command saves recipes info into a json. For certain items with many dependencies, it will take a few minutes.
 
-![diamond](diamond_dependencies.jpg)
+![diamond](diamond_dependencies.png)
 
 *Note that diamond ore is also related to diamond via "Drop," but the edge is obscured by the the smelt relation.
 
