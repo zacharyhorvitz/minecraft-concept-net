@@ -23,6 +23,6 @@ The above command saves recipes info into a json. For certain items with many de
 *Note that diamond ore is also related to diamond via "Drop," but the edge is obscured by the the smelt relation.
 
 
-#TODO:
+# TODO:
 - Clean code
 - Optimize
