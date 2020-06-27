@@ -19,9 +19,9 @@ def get_nested_elements(data):
 
 if __name__ == "__main__":
 
-	filename = "diamond.json"
+	filename = "data/diamond.json"
 
-	G=nx.DiGraph()
+	G=nx.MultiDiGraph()
 
 
 	with open(filename,"r") as json_file:
@@ -37,32 +37,22 @@ if __name__ == "__main__":
 				relation = option[1]
 				all_ingreds = list(set(get_nested_elements(all_ingreds)))
 				for ingred in all_ingreds:
+
 					G.add_edge(ingred,item)
-					edge_labels[(ingred,item)] = relation
 
+					if (ingred,item) not in edge_labels:
+						edge_labels[(ingred,item)] = relation
+					else:
+						edge_labels[(ingred,item)] =  " / ".join(list(set((edge_labels[(ingred,item)] + " / "+relation).split(' / '))))
 
+	pos = nx.planar_layout(G)
+	nx.draw(G,pos,edge_color='blue',with_labels=True)
 
-
-# # adding just one node:
-# G.add_node("a")
-# # a list of nodes:
-# G.add_nodes_from(["b","c"])
-
-# print("Nodes of graph: ")
-# print(G.nodes())
-# print("Edges of graph: ")
-# print(G.edges())
-	pos = nx.spring_layout(G)
-	nx.draw(G,pos,edge_color='black',with_labels=True)
-
-
-	nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels,font_color='red',with_labels=True)
+	nx.draw_networkx_edge_labels(G,pos,edge_labels,font_color='red',with_labels=True)
 
 	plt.savefig("diamond_dependencies.png") # save as png
 	plt.show() # display
 
-# with open(goal_items+".json","w+") as json_file:
-# 		json.dump(item_to_data,json_file)
 
 
 
