@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 	nx.draw_networkx_edge_labels(G,pos,edge_labels,font_color='red',with_labels=True)
 
-	plt.savefig("diamond_dependencies.png") # save as png
+	plt.savefig("data/diamond_dependencies.png") # save as png
 	plt.show() # display
 
 
